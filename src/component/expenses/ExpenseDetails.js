@@ -1,5 +1,5 @@
 import React from 'react'
-
+import './ExpenseDetails.css'
 const ExpenseDetails = ({expenseItem}) => {
   return (
     <div className="expense-item__description">

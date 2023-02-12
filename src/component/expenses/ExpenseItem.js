@@ -1,16 +1,20 @@
 import React from 'react'
 import './ExpenseItem.css'
+import Card from '../UI/Card';
 import ExpenseDate from './ExpenseDate';
 import ExpenseDetails from './ExpenseDetails';
 
 const ExpenseItem = ({expenseItem}) => {
-
+  const delHandler = (e) => {
+    e.target.parentElement.remove()
+  }
   return (
     <>
-        <div className="expense-item">
+        <Card className="expense-item">
           <ExpenseDate date={expenseItem.date}/>
           <ExpenseDetails expenseItem={expenseItem}/>
-        </div>
+          <button className='delBtn' onClick={delHandler}>Delete</button>
+        </Card>
     </>
   )
 }
