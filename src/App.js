@@ -1,7 +1,9 @@
-import './App.css';
-import ExpenseForm from './component/ExpenseForm';
 import Expenses from './component/expenses/Expenses';
-const expensesList = [
+import NewExpense from './component/newExpense/NewExpense';
+import './App.css';
+import { useState } from 'react';
+
+const initial_expenses = [
   {
     id : 1,
     date : new Date(2023,4,5),
@@ -41,11 +43,17 @@ const expensesList = [
 ]
 
 function App() {
-  
+  const [newExpense, setNewExpense] = useState(initial_expenses)
+  const addExpenseHandler = (expense) => {
+    setNewExpense((prevExpenses) => {
+      return [...prevExpenses, expense]
+    })
+  }
+
   return (
     <div className="App">
-      <ExpenseForm />
-      <Expenses expensesList={expensesList}/>
+      <NewExpense onAddExpense={addExpenseHandler} />
+      <Expenses expensesList={newExpense}/>
     </div>
   );
 }

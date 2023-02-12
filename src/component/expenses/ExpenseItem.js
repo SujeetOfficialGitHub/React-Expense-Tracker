@@ -22,8 +22,6 @@ const ExpenseItem = (props) => {
           <ExpenseDate date={props.expenseItem.date}/>
           <ExpenseDetails title={newTitle} amount={newAmt}/>
           <button className='delBtn' onClick={delHandler}>Delete</button>
-          <button className='changePrice' onClick={changeAmountHandler}>Change Amount</button>
-          <button className='changeTitle' onClick={changeTitleHandler}>Change Title</button>
         </Card>
     </>
   )
