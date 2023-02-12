@@ -1,10 +1,10 @@
 import React from 'react'
 import './ExpenseDetails.css'
-const ExpenseDetails = ({expenseItem}) => {
+const ExpenseDetails = ({title, amount}) => {
   return (
     <div className="expense-item__description">
-        <h2>{expenseItem.title}</h2>
-        <div className="expense-item__price">${expenseItem.amount}</div>
+        <h2>{title}</h2>
+        <div className="expense-item__price">${amount}</div>
     </div>
   )
 }
