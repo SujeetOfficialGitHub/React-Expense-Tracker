@@ -2,19 +2,37 @@ import React, { useState } from 'react';
 import './ExpenseForm.css';
 
 const ExpenseForm = () => {
-    const [title, setTitle] = useState()
-    const [amount, setAmount] = useState()
-    const [date, setDate] = useState()
+    // const [enteredTitle, setEnteredTitle] = useState('')
+    // const [enteredAmount, setEnteredAmount] = useState('')
+    // const [enteredDate, setEnteredDate] = useState('')
+
+    const [userInput, setUserInput] = useState({
+        enteredTitle : '',
+        enteredAmount : '',
+        enteredDate : ''
+    })
 
     const titleHandler = (e) => {
-        console.log(e.target.value)
+        // setEnteredTitle(e.target.value)
+        setUserInput({
+            ...userInput,
+            enteredTitle : e.target.value
+        })
     }
     const amountHandler = (e) => {
-        console.log(e.target.value)
+        // setEnteredAmount(e.target.value)
+        setUserInput({
+            ...userInput,
+            enteredAmount : e.target.value
+        })
         
     }
     const dateHandler = (e) => {
-        console.log(e.target.value)
+        // setEnteredDate(e.target.value)
+        setUserInput({
+            ...userInput,
+            enteredDate : e.target.value
+        })
 
     }
     const submitHandler = (e) => {
@@ -25,15 +43,15 @@ const ExpenseForm = () => {
         <form onSubmit={submitHandler} id="expense-form" action="">
             <div>
                 <label htmlFor="title">Title</label><br />
-                <input type="text" onChange={titleHandler} value={title} />
+                <input type="text" onChange={titleHandler} value={userInput.enteredTitle} />
             </div>
             <div>
                 <label htmlFor="amount">Amount</label><br />
-                <input type="number" onChange={amountHandler} value={amount} min="0" />
+                <input type="number" onChange={amountHandler} value={userInput.enteredAmount} min="0" />
             </div>
             <div>
                 <label htmlFor="date">Date</label><br />
-                <input type="date" onChange={dateHandler} value={date} />
+                <input type="date" onChange={dateHandler} value={userInput.enteredDate} />
             </div>
             <button type="submit">Submit</button>
         </form>
