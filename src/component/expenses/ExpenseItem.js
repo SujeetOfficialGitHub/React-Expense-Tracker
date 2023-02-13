@@ -4,7 +4,6 @@ import ExpenseDate from './ExpenseDate';
 import ExpenseDetails from './ExpenseDetails';
 
 const ExpenseItem = (props) => {
-  console.log(props)
   const delHandler = (e) => {
     e.target.parentElement.remove()
   }
