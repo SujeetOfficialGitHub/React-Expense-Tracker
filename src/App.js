@@ -12,7 +12,7 @@ const initial_expenses = [
   },
   {
     id : 2,
-    date : new Date(2023,4,5),
+    date : new Date(2022,4,5),
     title : "Petrol",
     amount : 400
   },
@@ -30,13 +30,13 @@ const initial_expenses = [
   },
   {
     id : 5,
-    date : new Date(2023,4,5),
+    date : new Date(2022,4,5),
     title : "Car Insurence",
     amount : 200
   },
   {
     id : 6,
-    date : new Date(2023,4,5),
+    date : new Date(2021,4,5),
     title : "Electricity Bill",
     amount : 340
   }
