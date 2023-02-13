@@ -5,7 +5,7 @@ const Expenses = (props) => {
   return (
     <div className="expenses">
         {props.expenses.map((item, i) => (
-          <ExpensesItem key={item.id} title={props.expenses[i].title} amount={props.expenses[i].amount} data={props.expenses[i].date} />
+          <ExpensesItem key={item.id} title={props.expenses[i].title} amount={props.expenses[i].amount} date={props.expenses[i].date} />
         ))}
     </div>
   )
