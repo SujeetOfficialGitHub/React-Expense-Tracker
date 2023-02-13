@@ -1,0 +1,30 @@
+.input-box{
+    display: inline-block;
+    margin: 8px 5px;
+}
+.input-box input{
+    font-size: 1rem;
+    padding: 5px;
+    outline: none;
+    width: 20rem;
+    border: 2px solid black;
+    border-radius: 5px;
+}
+.btn{
+    margin-left: 70%;
+}
+
+.submit-btn{
+    padding: 5px 1rem;
+    font-size: 1rem;
+    font-weight: bold;
+    border: 1px solid black;
+    border-radius: 5px;
+    cursor: pointer;
+
+}
+.submit-btn:hover{
+    color: white;
+    background: green;
+
+}
