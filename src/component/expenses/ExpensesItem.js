@@ -1,7 +1,7 @@
 import React from 'react'
 import './ExpensesItem.css'
 
-const ExpensesItem = () => {
+const ExpensesItem = (props) => {
   return (
     <>
         <div className="expense-item">
@@ -11,8 +11,8 @@ const ExpensesItem = () => {
                 <div>05</div>
             </div>
             <div className="expenses-description">
-                <div>Pizza</div>
-                <div className="expenses-amount">$300</div>
+                <div>{props.title}</div>
+                <div className="expenses-amount">${props.amount}</div>
             </div>
         </div>
     </>

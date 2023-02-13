@@ -1,13 +1,12 @@
 import React from 'react'
 import './Expenses.css'
 import ExpensesItem from './ExpensesItem'
-const Expenses = () => {
+const Expenses = (props) => {
   return (
     <div className="expenses">
-        <ExpensesItem />
-        <ExpensesItem />
-        <ExpensesItem />
-        <ExpensesItem />
+        {props.expenses.map((item, i) => (
+          <ExpensesItem key={item.id} title={props.expenses[i].title} amount={props.expenses[i].amount} data={props.expenses[i].date} />
+        ))}
     </div>
   )
 }
