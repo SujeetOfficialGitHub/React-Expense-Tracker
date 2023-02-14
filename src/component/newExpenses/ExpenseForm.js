@@ -1,30 +1,52 @@
 import React, { useState } from 'react';
-import './ExpensesForm.css'
+import './ExpenseForm.css'
 
-const ExpenseForm = () => {
+const ExpenseForm = (props) => {
     const [enteredTitle, setEnteredTitle] = useState('')
-    const [enteredamount, setEnteredAmount] = useState('')
+    const [enteredAmount, setEnteredAmount] = useState('')
     const [enteredDate, setEnteredDate] = useState('')
+
+    // const [userInput, setUserInput] = useState({
+    //     enteredTitle : '',
+    //     enteredAmount : '',
+    //     enteredDate : ''
+    // })
 
     const titleHandler = (e) => {
         setEnteredTitle(e.target.value)
+        // setUserInput({
+        //     ...userInput,
+        //     enteredTitle : e.target.value
+        // })
     }
     const amountHandler = (e) => {
         setEnteredAmount(e.target.value)
+        // setUserInput({
+        //     ...userInput,
+        //     enteredAmount : e.target.value
+        // })
         
     }
     const dateHandler = (e) => {
         setEnteredDate(e.target.value)
+        // setUserInput({
+        //     ...userInput,
+        //     enteredDate : e.target.value
+        // })
 
     }
     const submitHandler = (e) => {
         e.preventDefault()
         const enteredData = {
             title : enteredTitle,
-            amount : enteredamount,
-            date : enteredDate
+            amount : enteredAmount,
+            date : new Date(enteredDate),
+            id : Math.random().toString()
         }
-        console.log(enteredData)
+        props.onSaveEnteredData(enteredData)
+        setEnteredTitle('')
+        setEnteredAmount('')
+        setEnteredDate('')
         
     }
   return (
@@ -36,7 +58,7 @@ const ExpenseForm = () => {
             </div>
             <div className="input-box">
                 <label htmlFor="amount">Amount</label><br />
-                <input type="number" value={enteredamount} onChange={amountHandler} />
+                <input type="number" value={enteredAmount} onChange={amountHandler} />
             </div>
             <div className="input-box">
                 <label htmlFor="date">Date</label><br />
