@@ -5,6 +5,7 @@ const ExpenseForm = (props) => {
     const [enteredTitle, setEnteredTitle] = useState('')
     const [enteredAmount, setEnteredAmount] = useState('')
     const [enteredDate, setEnteredDate] = useState('')
+    const [emptyFieldMsg, setEmptyFieldMsg] = useState('')
 
     // const [userInput, setUserInput] = useState({
     //     enteredTitle : '',
@@ -35,23 +36,30 @@ const ExpenseForm = (props) => {
         // })
 
     }
+
     const submitHandler = (e) => {
         e.preventDefault()
-        const enteredData = {
-            title : enteredTitle,
-            amount : enteredAmount,
-            date : new Date(enteredDate),
-            id : Math.random().toString()
+        if (enteredTitle==='' || enteredAmount==='' || enteredDate===''){
+            setEmptyFieldMsg(<p>All fields are required</p>)
+        }else{
+            const enteredData = {
+                title : enteredTitle,
+                amount : enteredAmount,
+                date : new Date(enteredDate),
+                id : Math.random().toString()
+            }
+            setEmptyFieldMsg('')
+            props.onSaveEnteredData(enteredData)
+            setEnteredTitle('')
+            setEnteredAmount('')
+            setEnteredDate('')
         }
-        props.onSaveEnteredData(enteredData)
-        setEnteredTitle('')
-        setEnteredAmount('')
-        setEnteredDate('')
         
     }
   return (
     <>
         <form onSubmit={submitHandler} action="">
+            {emptyFieldMsg && <p className='form-field-msg'>{emptyFieldMsg}</p>}
             <div className="input-box">
                 <label htmlFor="title">Title</label><br />
                 <input type="text" value={enteredTitle} onChange={titleHandler} />

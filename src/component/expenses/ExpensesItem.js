@@ -6,10 +6,10 @@ const ExpensesItem = (props) => {
   return (
     <>
         <div className="expense-item">
-            <ExpensesDate date={props.date} />
+            <ExpensesDate date={props.expense.date} />
             <div className="expenses-description">
-                <div>{props.title}</div>
-                <div className="expenses-amount">${props.amount}</div>
+                <div>{props.expense.title}</div>
+                <div className="expenses-amount">${props.expense.amount}</div>
             </div>
         </div>
     </>

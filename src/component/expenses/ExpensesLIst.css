@@ -1,0 +1,9 @@
+.msg{
+    font-size: 1.5rem;
+    margin: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(60, 32, 126, 0.712);
+    padding: 2rem;
+}

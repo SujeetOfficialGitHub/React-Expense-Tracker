@@ -5,3 +5,19 @@
     background: rgba(128, 128, 128, 0.957);
 
 }
+.expenses-description{
+    margin: 1rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    color: white;
+}
+.expenses-amount{
+    background: rgba(73, 43, 115, 0.852);
+    border: 1px solid white;
+    border-radius: 8px;
+    padding: 7px 1rem;
+}

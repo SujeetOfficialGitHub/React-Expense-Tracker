@@ -28,3 +28,11 @@
     background: green;
 
 }
+.form-field-msg{
+    display: flex;
+    justify-content: center;
+    font-size: 1.2rem;
+    background: red;
+    padding: 5px;
+    border-radius: 5px;
+}
