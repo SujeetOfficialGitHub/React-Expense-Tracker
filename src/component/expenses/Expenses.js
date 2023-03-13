@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import ExpensesChart from './ExpensesChart';
 import './Expenses.css'
 import ExpensesFilter from './ExpensesFilter'
 import ExpensesLIst from './ExpensesLIst';
@@ -28,6 +29,7 @@ const Expenses = (props) => {
         {filteredExpenses.length>0 && filteredExpenses.map((expenseItem) => (
           <ExpensesItem key={expenseItem.id} expenses={expenseItem} />
         ))} */}
+        <ExpensesChart expenses={filteredExpenses} />
         <ExpensesLIst expenses={filteredExpenses} />
     </div>
   )

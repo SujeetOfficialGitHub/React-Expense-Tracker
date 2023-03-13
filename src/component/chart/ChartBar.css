@@ -1,0 +1,28 @@
+.chart-box{
+    display: grid;
+    width: 100%;
+    justify-content: space-between;
+}
+.chart-month{
+    background: rgb(38, 0, 255);
+    padding: 4px;
+    border-radius: 5px;
+    text-align: center;
+}
+.chart-stick{
+    height: 8rem;
+    /* color: white; */
+    width: 15px;
+    background: rgb(226, 227, 233);
+    margin: 1rem;
+    border: 2px solid black;
+    border-radius: 10px;
+    position: relative;
+    
+}
+.fill{
+    background: blue;
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    z-index: 1;
+}

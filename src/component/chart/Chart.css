@@ -1,0 +1,11 @@
+.chart{
+    background: rgb(123, 120, 120);
+    width: 100%;
+    height: 12rem;
+    border-radius: 10px;
+}
+.chart-stick-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

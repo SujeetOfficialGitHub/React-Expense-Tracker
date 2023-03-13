@@ -7,17 +7,29 @@ const initialExpenses = [
   {
     id : 1,
     title : 'Pizza',
-    amount : 200,
+    amount : 340,
     date : new Date(2020, 2, 4)
   },
   {
     id : 2,
+    title : 'Pizza',
+    amount : 700,
+    date : new Date(2020, 4, 4)
+  },
+  {
+    id : 3,
+    title : 'Pizza',
+    amount : 200,
+    date : new Date(2020, 7, 4)
+  },
+  {
+    id : 4,
     title : 'Burger',
     amount : 500,
     date : new Date(2022, 5, 8)
   },
   {
-    id : 3,
+    id : 5,
     title : 'Biryani',
     amount : 800,
     date : new Date(2023, 2, 19)
