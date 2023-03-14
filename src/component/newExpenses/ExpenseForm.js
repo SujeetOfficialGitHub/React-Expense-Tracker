@@ -7,6 +7,7 @@ const ExpenseForm = (props) => {
     const [enteredDate, setEnteredDate] = useState('')
     const [emptyFieldMsg, setEmptyFieldMsg] = useState('')
 
+    const [showExpenseForm, setShowExpenseForm] = useState(false);
     // const [userInput, setUserInput] = useState({
     //     enteredTitle : '',
     //     enteredAmount : '',
@@ -36,6 +37,9 @@ const ExpenseForm = (props) => {
         // })
 
     }
+    setTimeout(() => {
+        setEmptyFieldMsg('')
+    },10000)
 
     const submitHandler = (e) => {
         e.preventDefault()
@@ -56,26 +60,45 @@ const ExpenseForm = (props) => {
         }
         
     }
+    const showExpenseFormHandler = () => {
+        setShowExpenseForm(true)
+      }
+    const hideExpenseFormHandler = () => {
+        setShowExpenseForm(false)
+      }
+    
+
+    
   return (
     <>
-        <form onSubmit={submitHandler} action="">
+        {!showExpenseForm && 
+            <div className="show-form">
+                <button onClick={showExpenseFormHandler}>Add New Expenses</button>
+            </div>
+        }
+        {showExpenseForm && 
+            <>
             {emptyFieldMsg && <p className='form-field-msg'>{emptyFieldMsg}</p>}
-            <div className="input-box">
-                <label htmlFor="title">Title</label><br />
-                <input type="text" value={enteredTitle} onChange={titleHandler} />
-            </div>
-            <div className="input-box">
-                <label htmlFor="amount">Amount</label><br />
-                <input type="number" value={enteredAmount} onChange={amountHandler} />
-            </div>
-            <div className="input-box">
-                <label htmlFor="date">Date</label><br />
-                <input type="date" value={enteredDate} onChange={dateHandler} />
-            </div>
-            <div className="btn">
-                <input className='submit-btn' type="submit" value="Submit" />
-            </div>
-        </form>
+            <form onSubmit={submitHandler} className="expense-form" action="">
+                <div className="input-box">
+                    <label htmlFor="title">Title</label><br />
+                    <input type="text" value={enteredTitle} onChange={titleHandler} />
+                </div>
+                <div className="input-box">
+                    <label htmlFor="amount">Amount</label><br />
+                    <input type="number" value={enteredAmount} onChange={amountHandler} />
+                </div>
+                <div className="input-box">
+                    <label htmlFor="date">Date</label><br />
+                    <input type="date" value={enteredDate} onChange={dateHandler} />
+                </div>
+                <div className="btn">
+                    <input className='submit-btn' type="submit" value="Submit" />
+                    <input className='close-btn' onClick={hideExpenseFormHandler} type="button" value="Close" />
+                </div>
+            </form>
+            </>
+        }
     </>
   )
 }

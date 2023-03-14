@@ -1,3 +1,4 @@
+
 .expense-form-box{
     background: rgba(60, 32, 126, 0.712);
     margin: 1rem 0rem;
@@ -5,4 +6,6 @@
     padding: 10px;
     opacity: .8;
     color: white;
+    display: grid;
+
 }

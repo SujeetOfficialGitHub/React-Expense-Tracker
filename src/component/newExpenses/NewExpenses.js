@@ -6,6 +6,7 @@ const NewExpenses = (props) => {
   const saveExpensesDataHandler = (expensesData) => {
     props.onAddExpenses(expensesData)
   }
+
   return (
     <div className='expense-form-box'>
         <ExpenseForm onSaveEnteredData={saveExpensesDataHandler} />

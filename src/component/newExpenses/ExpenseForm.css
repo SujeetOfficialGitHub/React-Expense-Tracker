@@ -1,3 +1,17 @@
+.show-form{
+    display: flex;
+    justify-content: center;
+    margin: 2rem;
+    
+}
+.show-form button{
+    padding: .5rem 2rem;
+    border-radius: 10px;
+    border: 1px solid black;
+    color: black;
+    font-weight: bold;
+}
+
 .input-box{
     display: inline-block;
     margin: 8px 5px;
@@ -11,19 +25,22 @@
     border-radius: 5px;
 }
 .btn{
-    margin-left: 70%;
+    margin-left: 60%;
+    padding-top: 1rem;
 }
 
-.submit-btn{
+.submit-btn, .close-btn{
     padding: 5px 1rem;
     font-size: 1rem;
     font-weight: bold;
     border: 1px solid black;
     border-radius: 5px;
     cursor: pointer;
+    margin: 1rem;
+
 
 }
-.submit-btn:hover{
+.submit-btn:hover, .close-btn:hover{
     color: white;
     background: green;
 
@@ -35,4 +52,15 @@
     background: red;
     padding: 5px;
     border-radius: 5px;
+}
+
+@media (max-width: 680px){
+    .expense-form{
+        margin: auto;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+
+    }
 }
