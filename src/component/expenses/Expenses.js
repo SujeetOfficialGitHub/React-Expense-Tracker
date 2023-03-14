@@ -4,7 +4,6 @@ import './Expenses.css'
 import ExpensesFilter from './ExpensesFilter'
 import ExpensesLIst from './ExpensesLIst';
 const Expenses = (props) => {
-    console.log(props)
   // Receive user selected Year from ExpensesFilter
   const [filteredYear, setFilteredYear] = useState('2022')
   const filterChangeHandler = (selectedYear) => {
