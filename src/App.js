@@ -18,13 +18,13 @@ const initial_expenses = [
   },
   {
     id : 3,
-    date : new Date(2023,4,5),
+    date : new Date(2023,5,5),
     title : "Pizza",
-    amount : 300
+    amount : 3000
   },
   {
     id : 4,
-    date : new Date(2023,4,5),
+    date : new Date(2023,6,5),
     title : "Car Insurence",
     amount : 200
   },
